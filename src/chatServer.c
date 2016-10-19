@@ -271,7 +271,6 @@ int findSocket(const char *nickname)
     for(i = 0;i < n;++i)//;   <--!!!
     {
         cp =(Client *)listGet(&client_list, i);
-        //fprintf(stderr,"%s-%s\n",cp->name,nickname);
         if(cp && strncmp(cp->name, nickname, strlen(cp->name))==0)
             {pthread_mutex_unlock(&mutex);return cp->sfd;}
     }
